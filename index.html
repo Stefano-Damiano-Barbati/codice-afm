@@ -50,46 +50,210 @@
       padding: 10px;
       text-align: center;
     }
+    .schede-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .istruzioni-box {
+      display: none;
+      margin-top: 20px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      background-color: #f2f2f2;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+    }
   </style>
 </head>
 <body>
-  <header>
-    <img src="logo-codice-afm.png" alt="Logo Codice AFM" />
+<header>
+    <img src="A_flat_design_digital_vector_graphic_features_an_i.png" alt="Logo Codice AFM" />
     <h1>Codice AFM – Decifra il Futuro</h1>
   </header>
 
   <section>
     <h2>Benvenuti</h2>
+    <p>👋 Benvenuti studenti del Prof. Barbati! Siete pronti a decifrare il futuro con il Codice AFM?</p>
     <p>Un'esperienza educativa che unisce crittografia, competenze digitali e collaborazione tra studenti.</p>
   </section>
 
-  <section id="frase-segreta">
-    <h2>Hai decifrato la frase?</h2>
-    <p>Scrivila qui sotto per scoprire se hai ragione:</p>
-    <input type="text" id="rispostaStudente" placeholder="Scrivi la frase completa..." />
-    <button onclick="verificaFrase()">Verifica</button>
-    <p id="feedback"></p>
+  <section id="compito">
+    <h2>Il tuo compito</h2>
+    <p>Leggi attentamente le istruzioni e scopri il messaggio nascosto.</p>
+    <p>Dovrai collaborare con i tuoi compagni per decifrare una frase criptata, utilizzando conoscenze matematiche, informatiche e logiche.</p>
+    <p>Quando hai letto e compreso, clicca sul pulsante per confermare.</p>
+    <button onclick="confermaLettura()">✅ Confermo di aver letto</button>
+    <p id="conferma-lettura"></p>
     <script>
-      function verificaFrase() {
-        const risposta = document.getElementById("rispostaStudente").value.trim().toLowerCase();
-        const fraseCorretta = "la conoscenza è il nostro codice per il futuro.";
-        const feedback = document.getElementById("feedback");
+      function confermaLettura() {
+        document.getElementById("conferma-lettura").innerText = "Grazie! Ora puoi procedere con la decifrazione o chiedere supporto sull'argomento crittografia.";
+      }
+    </script>
+  </section>
 
-        if (risposta === fraseCorretta.toLowerCase()) {
-          feedback.innerHTML = "✅ Complimenti! Hai decifrato il messaggio!";
+  <section id="schede">
+    <h2>Scegli una scheda operativa</h2>
+    <div class="schede-container">
+      <button onclick="mostraIstruzioni('matematica')">🧮 Matematica</button>
+      <button onclick="mostraIstruzioni('informatica')">💻 Informatica</button>
+      <button onclick="mostraIstruzioni('economia')">📊 Economia Aziendale</button>
+      <button onclick="mostraIstruzioni('strumenti')">🤖 Strumenti Digitali / IA</button>
+    </div>
+
+    <div id="istruzioni-matematica" class="istruzioni-box">
+      <h3>🧮 Scheda Operativa – Matematica</h3>
+      <p><strong>Obiettivo:</strong> Usare il Cifrario di Cesare per decifrare una parte della frase finale del progetto.</p>
+      <ul>
+        <li>Decifra il messaggio: <code>Od frqrvfhqcd è lo qrvwuro frglfh shu lo ixwxur</code></li>
+        <li>Individua lo spostamento corretto (suggerimento: è -3)</li>
+        <li>Scrivi la frase risultante in modo chiaro</li>
+        <li>Confrontala con le altre parti della frase per ricostruire il messaggio completo</li>
+      </ul>
+      <p><strong>Indizio:</strong> Otterrai l'inizio della frase segreta!</p>
+    </div>
+
+    <div id="istruzioni-informatica" class="istruzioni-box">
+      <h3>💻 Scheda Operativa – Informatica</h3>
+      <p><strong>Obiettivo:</strong> Utilizzare codici ASCII e binari per completare parte della frase segreta.</p>
+      <ul>
+        <li>Decifra questo codice binario: <code>01100101 00100000 01101001 01101100</code></li>
+        <li>Usa un convertitore per scoprire le parole mancanti</li>
+        <li>Inseriscile nella frase e verifica se si integrano</li>
+      </ul>
+      <p><strong>Indizio:</strong> Questa è una parte centrale della frase.</p>
+    </div>
+
+    <div id="istruzioni-economia" class="istruzioni-box">
+      <h3>📊 Scheda Operativa – Economia Aziendale</h3>
+      <p><strong>Obiettivo:</strong> Analizzare un codice IBAN per ricostruire una parte logica del messaggio nascosto.</p>
+      <ul>
+        <li>Analizza: <code>IT60X0542811101000000123456</code></li>
+        <li>Dividi in gruppi e associa a parole chiave (es. codice, conoscenza...)</li>
+        <li>Ricostruisci una parte del messaggio</li>
+      </ul>
+      <p><strong>Indizio:</strong> Parole come "codice" o "futuro" sono fondamentali.</p>
+    </div>
+
+    <div id="istruzioni-strumenti" class="istruzioni-box">
+      <h3>🤖 Scheda Operativa – Strumenti Digitali / IA</h3>
+      <p><strong>Obiettivo:</strong> Utilizzare uno scanner OCR o un lettore QR per ottenere l'ultima parte della frase.</p>
+      <ul>
+        <li>Scansiona il QR fornito</li>
+        <li>Usa strumenti digitali per interpretarlo</li>
+        <li>Scrivi l’ultima parte della frase</li>
+      </ul>
+      <p><strong>Indizio:</strong> L’ultima parola riguarda il futuro!</p>
+    </div>
+
+    <script>
+      function mostraIstruzioni(tipo) {
+        const istruzioni = document.querySelectorAll('.istruzioni-box');
+        istruzioni.forEach(div => div.style.display = 'none');
+        document.getElementById(`istruzioni-${tipo}`).style.display = 'block';
+      }
+    </script>
+  </section>
+
+  <section id="codici">
+    <h2>Codici da Decifrare</h2>
+    <p>Ogni codice contiene una parte della frase finale. Risolvili insieme al tuo gruppo!</p>
+    <div style="max-width: 700px; margin: 20px auto; text-align: left; background-color: #eef5ff; padding: 20px; border-radius: 10px;">
+      <ol>
+        <li><strong>Cifrario di Cesare:</strong> "Odqfrqrvfhd lv lo qrvwur irwxur" (spostamento -3)</li>
+        <li><strong>Codice Binario ASCII:</strong> 01001100 01100001 00100000...</li>
+        <li><strong>Codice IBAN:</strong> IT60X0542811101000000123456</li>
+        <li><strong>QR Code:</strong> Da scansionare con OCR o app dedicata</li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="strumenti">
+    <h2>Strumenti Consigliati</h2>
+    <p>Per aiutarti nella decifrazione, puoi usare questi strumenti online:</p>
+    <ul style="text-align:left; max-width:600px; margin:auto;">
+      <li>🔐 <a href="https://www.dcode.fr/caesar-cipher" target="_blank">Convertitore Cifrario di Cesare</a></li>
+      <li>💡 <a href="https://www.rapidtables.com/convert/number/ascii-to-binary.html" target="_blank">ASCII ↔ Binario</a></li>
+      <li>📷 <a href="https://www.onlineocr.net/" target="_blank">Scanner OCR</a></li>
+      <li>🔍 <a href="https://webqr.com/" target="_blank">QR Code Reader</a></li>
+    </ul>
+  </section>
+
+  <section id="frase-segreta">
+
+  <section id="verifica-parole">
+    <h2>Verifica le parole decifrate</h2>
+    <p>Inserisci una alla volta le parole che pensi facciano parte della frase segreta:</p>
+    <input type="text" id="parolaUtente" placeholder="Scrivi una parola..." />
+    <button onclick="verificaParola()">Verifica parola</button>
+    <p id="feedbackParola" style="margin-top: 10px;"></p>
+    <div style="margin: 30px auto; max-width: 500px; text-align: left;">
+      <label for="progresso">Completamento frase:</label>
+      <progress id="progresso" value="0" max="9" style="width: 100%; height: 25px;"></progress>
+      <div id="grigliaFrase" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 5px; margin-top: 20px;"></div>
+    </div>
+    <script>
+      const paroleCorrette = [
+        "la", "conoscenza", "è", "il", "nostro", "codice", "per", "il", "futuro"
+      ];
+      const paroleTrovate = [];
+
+      function verificaParola() {
+        const input = document.getElementById("parolaUtente").value.trim().toLowerCase();
+        const feedback = document.getElementById("feedbackParola");
+        const progresso = document.getElementById("progresso");
+
+        if (paroleCorrette.includes(input) && !paroleTrovate.includes(input)) {
+          paroleTrovate.push(input);
+          feedback.innerHTML = `✅ La parola "<strong>${input}</strong>" fa parte della frase!`;
           feedback.style.color = "green";
+        } else if (paroleTrovate.includes(input)) {
+          feedback.innerHTML = `🔁 Hai già inserito la parola "<strong>${input}</strong>".`;
+          feedback.style.color = "orange";
         } else {
-          feedback.innerHTML = "❌ Non è corretto. Riprova!";
+          feedback.innerHTML = `❌ La parola "<strong>${input}</strong>" non è nella frase.`;
           feedback.style.color = "red";
+        }
+
+        progresso.value = paroleTrovate.length;
+
+        const griglia = document.getElementById("grigliaFrase");
+        griglia.innerHTML = "";
+        paroleCorrette.forEach(p => {
+          const cella = document.createElement("div");
+          cella.textContent = paroleTrovate.includes(p) ? p.toUpperCase() : "";
+          cella.style.width = "80px";
+          cella.style.height = "80px";
+          cella.style.display = "flex";
+          cella.style.alignItems = "center";
+          cella.style.justifyContent = "center";
+          cella.style.border = "2px solid #333";
+          cella.style.fontSize = "20px";
+          cella.style.fontWeight = "bold";
+          cella.style.backgroundColor = paroleTrovate.includes(p) ? "#d4edda" : "#ffffff";
+          griglia.appendChild(cella);
+        });
+
+        if (paroleTrovate.length === paroleCorrette.length) {
+          const celebr = document.createElement("div");
+          celebr.innerHTML = "🎉 Complimenti! Hai completato tutta la frase! 🎉";
+          celebr.style.color = "#2e7d32";
+          celebr.style.fontSize = "24px";
+          celebr.style.fontWeight = "bold";
+          celebr.style.marginTop = "20px";
+          griglia.appendChild(celebr);
         }
       }
     </script>
   </section>
 
-  <section id="contatti" style="background-color:#f2f2f2;">
+<section id="contatti" style="background-color:#f2f2f2;">
     <h2>Contatti</h2>
-    <p><strong>Prof. Ing. Stefano Damiano Barbati</strong></p>
-    <p>Docente di Matematica Applicata, Fisica, Disegno tecnico e Topografia</p>
+    <p><strong>Prof. Stefano Damiano Barbati</strong></p>
+    <p>Docente di Matematica e Informatica</p>
     <p>Istituto di Istruzione Superiore "Gobetti Marchesini Casale Arduino"</p>
     <p>Via Figlie dei Militari, 25 – 10131 Torino (TO)</p>
     <p>Telefono: <a href="tel:0110898342">011 089 83 42</a></p>
