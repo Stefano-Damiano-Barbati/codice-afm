@@ -2,146 +2,103 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Codice AFM - Decifra il Futuro</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Codice AFM – Decifra il Futuro</title>
   <style>
     body {
-      margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: #f4f4f9;
+      margin: 0;
+      background-color: #ffffff;
       color: #333;
     }
     header {
-      background: linear-gradient(90deg, #3f87a6, #ebf8e1, #f69d3c);
+      background-color: #1e88e5;
       color: white;
+      padding: 20px;
       text-align: center;
-      padding: 2em 1em;
     }
     header img {
-      max-width: 120px;
-      margin-bottom: 1em;
-    }
-    nav {
-      margin-top: 1em;
-    }
-    nav a {
-      background: #f69d3c;
-      color: white;
-      padding: 0.6em 1.2em;
-      margin: 0.2em;
-      border-radius: 25px;
-      text-decoration: none;
-      display: inline-block;
-      transition: background 0.3s;
-    }
-    nav a:hover {
-      background: #d87e1c;
+      max-width: 150px;
+      display: block;
+      margin: 0 auto 10px;
     }
     section {
-      padding: 3em 1.5em;
-      max-width: 900px;
-      margin: auto;
+      padding: 30px;
+      text-align: center;
     }
-    section:nth-child(even) {
-      background-color: #ffffff;
+    #frase-segreta {
+      background-color: #f9f9f9;
     }
-    section:nth-child(odd) {
-      background-color: #eaf4f4;
+    input[type="text"] {
+      padding: 10px;
+      width: 60%;
+      margin: 10px 0;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
     }
     footer {
-      background: #333;
-      color: #ccc;
+      background-color: #1e88e5;
+      color: white;
+      padding: 10px;
       text-align: center;
-      padding: 1em;
     }
   </style>
 </head>
 <body>
+  <header>
+    <img src="A_flat_design_digital_vector_graphic_features_an_i.png" alt="Logo Codice AFM" />
+    <h1>Codice AFM – Decifra il Futuro</h1>
+  </header>
 
-<header>
-  <img src="logo-afm.png" alt="Logo Codice AFM" />
-  <h1>Codice AFM – Decifra il Futuro</h1>
-  <p>Un percorso interattivo tra matematica, economia e intelligenza artificiale</p>
-  <nav>
-    <a href="#introduzione">Introduzione</a>
-    <a href="#attivita">Attività</a>
-    <a href="#risorse">Risorse</a>
-    <a href="#contatti">Contattami</a>
-  </nav>
-</header>
+  <section>
+    <h2>Benvenuti</h2>
+    <p>Un'esperienza educativa che unisce crittografia, competenze digitali e collaborazione tra studenti.</p>
+  </section>
 
-<section id="introduzione">
-  <h2>Introduzione</h2>
-  <p>
-    Benvenuto nel progetto “Codice AFM”! Questo sito raccoglie attività, strumenti e risorse
-    per rendere l'apprendimento coinvolgente attraverso la crittografia, l’intelligenza artificiale e l’uso del digitale.
-  </p>
-</section>
+  <section id="frase-segreta">
+    <h2>Hai decifrato la frase?</h2>
+    <p>Scrivila qui sotto per scoprire se hai ragione:</p>
+    <input type="text" id="rispostaStudente" placeholder="Scrivi la frase completa..." />
+    <button onclick="verificaFrase()">Verifica</button>
+    <p id="feedback"></p>
+    <script>
+      function verificaFrase() {
+        const risposta = document.getElementById("rispostaStudente").value.trim().toLowerCase();
+        const fraseCorretta = "la conoscenza è il nostro codice per il futuro.";
+        const feedback = document.getElementById("feedback");
 
-<section id="attivita">
-  <h2>Attività</h2>
-  <ul>
-    <li>🔐 Crittografia e codici segreti</li>
-    <li>📊 Analisi di dati aziendali</li>
-    <li>📱 Uso del cellulare come strumento didattico</li>
-    <li>🤖 Intelligenza artificiale applicata alle decisioni aziendali</li>
-  </ul>
-</section>
+        if (risposta === fraseCorretta.toLowerCase()) {
+          feedback.innerHTML = "✅ Complimenti! Hai decifrato il messaggio!";
+          feedback.style.color = "green";
+        } else {
+          feedback.innerHTML = "❌ Non è corretto. Riprova!";
+          feedback.style.color = "red";
+        }
+      }
+    </script>
+  </section>
 
-<section id="risorse">
-  <h2>Risorse</h2>
-  <p>Puoi accedere al Padlet, ai moduli interattivi, alle istruzioni PDF e ai codici QR direttamente da qui.</p>
-  <p><a href="https://padlet.com" target="_blank">🌐 Vai al Padlet (esempio)</a></p>
-</section>
+  <section id="contatti" style="background-color:#f2f2f2;">
+    <h2>Contatti</h2>
+    <p><strong>Prof. Stefano Damiano Barbati</strong></p>
+    <p>Docente di Matematica e Informatica</p>
+    <p>Istituto di Istruzione Superiore "Gobetti Marchesini Casale Arduino"</p>
+    <p>Via Figlie dei Militari, 25 – 10131 Torino (TO)</p>
+    <p>Telefono: <a href="tel:0110898342">011 089 83 42</a></p>
+    <p>Email: <a href="mailto:stefano.barbati@gmca.edu.it">stefano.barbati@gmca.edu.it</a></p>
+    <p>Sito web: <a href="https://www.isgmca.it/" target="_blank">www.isgmca.it</a></p>
+  </section>
 
-<section id="contatti" style="background-color:#f2f2f2;padding:30px;text-align:center;">
-  <h2>Contatti</h2>
-  <p><strong>Prof. Ing. Stefano Damiano Barbati</strong></p>
-  <p>Docente di Matematica, Fisica, Topografia, Disegno e Informatica</p>
-  <p>Istituto di Istruzione Superiore "Gobetti Marchesini Casale Arduino"</p>
-  <p>Via Figlie dei Militari, 25 – 10131 Torino (TO)</p>
-  <p>Telefono: <a href="tel:0110898342">011 089 83 42</a></p>
-  <p>Email: <a href="mailto:stefano.barbati@gmca.edu.it">stefano.barbati@gmca.edu.it</a></p>
-  <p>Sito web: <a href="https://www.isgmca.it/" target="_blank">www.isgmca.it</a></p>
-</section>
-
-<footer>
-  <p>© 2025 Codice AFM - Licenza Creative Commons CC BY-NC-SA</p>
-</footer>
-<!-- Bottone per aprire la verifica -->
-<section id="apri-verifica" style="text-align:center;margin:40px 0;">
-  <button onclick="document.getElementById('verifica').style.display='block'; this.style.display='none';" 
-          style="padding: 15px 30px; font-size: 1.2em; border-radius: 10px; background-color: #4CAF50; color: white; border: none;">
-    Prova a sbloccare il messaggio finale!
-  </button>
-</section>
-
-<!-- Sezione nascosta per la verifica -->
-<section id="verifica" style="display:none; text-align:center; margin:30px auto; max-width:600px;">
-  <h2>Verifica il Codice Finale</h2>
-  <p>Hai decifrato tutti i codici? Scrivi la frase finale per sbloccare la sorpresa!</p>
-  <input type="text" id="userInput" placeholder="Scrivi qui la frase..." 
-         style="width:80%;padding:10px;font-size:1em;border-radius:8px;border:1px solid #ccc;" />
-  <br>
-  <button onclick="verificaFrase()" 
-          style="margin-top:10px;padding:10px 20px;font-size:1em;border-radius:8px;background-color:#2196F3;color:white;border:none;">
-    Verifica
-  </button>
-  <div id="risultato" style="margin-top:20px;font-weight:bold;"></div>
-</section>
-
-<script>
-  function verificaFrase() {
-    const rispostaCorretta = "la conoscenza è il nostro codice per il futuro";
-    const userInput = document.getElementById("userInput").value.toLowerCase().trim();
-    const risultato = document.getElementById("risultato");
-
-    if (userInput === rispostaCorretta) {
-      risultato.innerHTML = "✅ Complimenti! Hai decifrato il messaggio!<br><img src='premio.gif' alt='Premio' style='width:200px;margin-top:10px;' />";
-    } else {
-      risultato.textContent = "❌ Non è corretto. Riprova!";
-    }
-  }
-</script>
+  <footer>
+    <p>&copy; 2025 Codice AFM – Progetto educativo interdisciplinare</p>
+  </footer>
 </body>
 </html>
