@@ -6,52 +6,102 @@
   <title>Codice AFM - Decifra il Futuro</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f9;
       margin: 0;
-      padding: 20px;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f4f9;
       color: #333;
     }
-    h1 {
-      color: #005577;
+    header {
+      background: linear-gradient(90deg, #3f87a6, #ebf8e1, #f69d3c);
+      color: white;
+      text-align: center;
+      padding: 2em 1em;
     }
-    .box {
-      background: white;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    header img {
+      max-width: 120px;
+      margin-bottom: 1em;
+    }
+    nav {
+      margin-top: 1em;
+    }
+    nav a {
+      background: #f69d3c;
+      color: white;
+      padding: 0.6em 1.2em;
+      margin: 0.2em;
+      border-radius: 25px;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.3s;
+    }
+    nav a:hover {
+      background: #d87e1c;
+    }
+    section {
+      padding: 3em 1.5em;
+      max-width: 900px;
+      margin: auto;
+    }
+    section:nth-child(even) {
+      background-color: #ffffff;
+    }
+    section:nth-child(odd) {
+      background-color: #eaf4f4;
     }
     footer {
+      background: #333;
+      color: #ccc;
       text-align: center;
-      font-size: 0.9em;
-      color: #666;
-      margin-top: 40px;
+      padding: 1em;
     }
   </style>
 </head>
 <body>
 
-  <h1>Codice AFM - Decifra il Futuro</h1>
+<header>
+  <img src="logo-afm.png" alt="Logo Codice AFM" />
+  <h1>Codice AFM – Decifra il Futuro</h1>
+  <p>Un percorso interattivo tra matematica, economia e intelligenza artificiale</p>
+  <nav>
+    <a href="#introduzione">Introduzione</a>
+    <a href="#attivita">Attività</a>
+    <a href="#risorse">Risorse</a>
+    <a href="#contatti">Contattami</a>
+  </nav>
+</header>
 
-  <div class="box">
-    <h2>🔍 Descrizione del Progetto</h2>
-    <p>Un'attività collaborativa per studenti AFM che unisce matematica, informatica, economia aziendale e strumenti digitali in una sfida a squadre di decodifica e intelligenza artificiale.</p>
-  </div>
+<section id="introduzione">
+  <h2>Introduzione</h2>
+  <p>
+    Benvenuto nel progetto “Codice AFM”! Questo sito raccoglie attività, strumenti e risorse
+    per rendere l'apprendimento coinvolgente attraverso la crittografia, l’intelligenza artificiale e l’uso del digitale.
+  </p>
+</section>
 
-  <div class="box">
-    <h2>🧩 Struttura Jigsaw</h2>
-    <p>I gruppi si suddividono in 4 ruoli (Matematica, Informatica, Economia Aziendale, Strumenti Digitali/IA), ognuno con una scheda operativa. Alla fine, i codici si combinano per formare una frase misteriosa.</p>
-  </div>
+<section id="attivita">
+  <h2>Attività</h2>
+  <ul>
+    <li>🔐 Crittografia e codici segreti</li>
+    <li>📊 Analisi di dati aziendali</li>
+    <li>📱 Uso del cellulare come strumento didattico</li>
+    <li>🤖 Intelligenza artificiale applicata alle decisioni aziendali</li>
+  </ul>
+</section>
 
-  <div class="box">
-    <h2>💬 Frase finale</h2>
-    <blockquote>La conoscenza è il nostro codice per il futuro.</blockquote>
-  </div>
+<section id="risorse">
+  <h2>Risorse</h2>
+  <p>Puoi accedere al Padlet, ai moduli interattivi, alle istruzioni PDF e ai codici QR direttamente da qui.</p>
+  <p><a href="https://padlet.com" target="_blank">🌐 Vai al Padlet (esempio)</a></p>
+</section>
 
-  <footer>
-    © 2025 – Progetto a cura di Stefano Damiano Barbati • Licenza MIT
-  </footer>
+<section id="contatti">
+  <h2>Contattami</h2>
+  <p>Per domande o collaborazione, scrivi a <a href="mailto:tuo@email.it">tuo@email.it</a></p>
+</section>
+
+<footer>
+  <p>© 2025 Codice AFM - Licenza Creative Commons CC BY-NC-SA</p>
+</footer>
 
 </body>
 </html>
