@@ -94,14 +94,54 @@
   <p><a href="https://padlet.com" target="_blank">🌐 Vai al Padlet (esempio)</a></p>
 </section>
 
-<section id="contatti">
-  <h2>Contattami</h2>
-  <p>Per domande o collaborazione, scrivi a <a href="mailto:tuo@email.it">tuo@email.it</a></p>
+<section id="contatti" style="background-color:#f2f2f2;padding:30px;text-align:center;">
+  <h2>Contatti</h2>
+  <p><strong>Prof. Ing. Stefano Damiano Barbati</strong></p>
+  <p>Docente di Matematica, Fisica, Topografia, Disegno e Informatica</p>
+  <p>Istituto di Istruzione Superiore "Gobetti Marchesini Casale Arduino"</p>
+  <p>Via Figlie dei Militari, 25 – 10131 Torino (TO)</p>
+  <p>Telefono: <a href="tel:0110898342">011 089 83 42</a></p>
+  <p>Email: <a href="mailto:stefano.barbati@gmca.edu.it">stefano.barbati@gmca.edu.it</a></p>
+  <p>Sito web: <a href="https://www.isgmca.it/" target="_blank">www.isgmca.it</a></p>
 </section>
 
 <footer>
   <p>© 2025 Codice AFM - Licenza Creative Commons CC BY-NC-SA</p>
 </footer>
+<!-- Bottone per aprire la verifica -->
+<section id="apri-verifica" style="text-align:center;margin:40px 0;">
+  <button onclick="document.getElementById('verifica').style.display='block'; this.style.display='none';" 
+          style="padding: 15px 30px; font-size: 1.2em; border-radius: 10px; background-color: #4CAF50; color: white; border: none;">
+    Prova a sbloccare il messaggio finale!
+  </button>
+</section>
 
+<!-- Sezione nascosta per la verifica -->
+<section id="verifica" style="display:none; text-align:center; margin:30px auto; max-width:600px;">
+  <h2>Verifica il Codice Finale</h2>
+  <p>Hai decifrato tutti i codici? Scrivi la frase finale per sbloccare la sorpresa!</p>
+  <input type="text" id="userInput" placeholder="Scrivi qui la frase..." 
+         style="width:80%;padding:10px;font-size:1em;border-radius:8px;border:1px solid #ccc;" />
+  <br>
+  <button onclick="verificaFrase()" 
+          style="margin-top:10px;padding:10px 20px;font-size:1em;border-radius:8px;background-color:#2196F3;color:white;border:none;">
+    Verifica
+  </button>
+  <div id="risultato" style="margin-top:20px;font-weight:bold;"></div>
+</section>
+
+<script>
+  function verificaFrase() {
+    const rispostaCorretta = "la conoscenza è il nostro codice per il futuro";
+    const userInput = document.getElementById("userInput").value.toLowerCase().trim();
+    const risultato = document.getElementById("risultato");
+
+    if (userInput === rispostaCorretta) {
+      risultato.innerHTML = "✅ Complimenti! Hai decifrato il messaggio!<br><img src='premio.gif' alt='Premio' style='width:200px;margin-top:10px;' />";
+    } else {
+      risultato.textContent = "❌ Non è corretto. Riprova!";
+    }
+  }
+</script>
 </body>
 </html>
